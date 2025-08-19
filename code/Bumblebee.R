@@ -5,7 +5,7 @@ library(lmerTest)
 library(readxl)
 library(ggplot2)
 
-df <-read_excel("Desktop/Master project/Pilot 1 wavelength and duration/NIR.xlsx")
+df <-read_excel("../data/NIR.xlsx")
 
 df$food <- as.numeric(df$food)
 df$HourNumeric <- as.numeric(gsub("\\D", "", df$Hour))
@@ -218,7 +218,7 @@ library(ggplot2)
 library(lme4)
 library(pbkrtest)
 
-df<- read_excel("Desktop/Master project/bee food 1/food1R.xlsx")
+df<- read_excel("../data/food1R.xlsx")
 df <- df %>%
   mutate(
     Group = factor(Group),
@@ -486,7 +486,7 @@ summary(emm_concs$contrasts)
 
 
 
-dfrecover <- read_excel("Desktop/Master project/bee food 1/recoverdata.xlsx")
+dfrecover <- read_excel("../data/recoverdata.xlsx")
 dfrecover$Concentration <- as.factor(dfrecover$Concentration)
 str(dfrecover)
 
@@ -524,7 +524,7 @@ emmc4m<- emmeans(mod_recovermass, ~ Concentration | Group)
 summary(emmc4m)
 pairs(emmc4m, adjust = "tukey")   
 
-recoverrate <- read_excel("Desktop/Master project/bee food 1/recoverrate.xlsx")
+recoverrate <- read_excel("../data/recoverrate.xlsx")
 
 recoverrate$Concentration <- as.factor(recoverrate$Concentration)
 
